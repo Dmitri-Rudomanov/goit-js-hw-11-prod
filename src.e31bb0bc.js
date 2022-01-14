@@ -6383,6 +6383,8 @@ const picsApiService = new _pictureService.default();
 var lightbox = new _simplelightbox.default('.gallery a');
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', fetchGallery);
+loadMoreBtn.hide();
+loadMoreBtn.disable();
 
 function onSearch(e) {
   e.preventDefault();
