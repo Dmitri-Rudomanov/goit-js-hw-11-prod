@@ -4477,7 +4477,7 @@ class PicsApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
-    this.perPage = 40;
+    this.perPage = 20;
     this.hitsCounter = 0;
   }
 
@@ -6383,8 +6383,6 @@ const picsApiService = new _pictureService.default();
 var lightbox = new _simplelightbox.default('.gallery a');
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', fetchGallery);
-loadMoreBtn.hide();
-loadMoreBtn.disable();
 
 function onSearch(e) {
   e.preventDefault();
@@ -6434,6 +6432,8 @@ function fetchGallery() {
       hitsCheck(totalHits, picsApiService.hitsCounter);
       return;
     }
+
+    loadMoreBtn.hide();
 
     _notiflix.default.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
   });
